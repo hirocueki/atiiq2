@@ -2,6 +2,6 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :item
 
-  scope :recent, -> { order(created_at: :desc) }
+  scope :older, -> { order(created_at: :asc) }
 
 end

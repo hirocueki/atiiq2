@@ -11,4 +11,6 @@ Rails.application.routes.draw do
       resources :stocks, only: %i[create destroy]
     end
   end
+
+  resources :relationships, only: %i[create destroy]
 end
