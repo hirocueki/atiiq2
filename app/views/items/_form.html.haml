@@ -1,0 +1,20 @@
+= form_with(model: [user, item], local: true) do |f|
+  - if item.errors.any?
+    #error_explanation.alert.alert-danger
+      %ul
+        - item.errors.full_messages.each do |message|
+          %li #{message}
+
+  .field
+    = f.text_field :title, id: :item_title, placeholder: "タイトル", class: 'form-control'
+
+  -#.field.mt-1
+  -#  = f.text_field :title, id: :item_tag, placeholder: "タグ", class: 'form-control'
+
+  .row.mt-3
+    .col-md-6
+      .card
+        .card-header 本文
+        = f.text_area :content, id: :item_content, placeholder: "本文", class: 'form-control'
+  .actions.text-right
+    = f.submit (yield :submit_label), class: 'btn btn-primary mt-1'

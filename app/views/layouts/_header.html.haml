@@ -1,0 +1,15 @@
+%header
+  %nav.navbar.navbar-expand-md
+    = link_to 'Atiiq', root_path, class: 'navbar-brand'
+
+    %button.navbar-toggler{type:"button", data:{toggle:"collapse", target:"#mainNavbarCollapse"}}= '&#9776;'.html_safe
+    #mainNavbarCollapse.collapse.navbar-collapse.ml-auto
+      %ul.navbar-nav.ml-auto
+        - if user_signed_in?
+          %li.nab-item= link_to '投稿する', new_user_item_path(current_user)
+          %li.nab-item= link_to '記事の一覧', user_path(current_user)
+          %li.nab-item= link_to 'ログアウト', destroy_user_session_path, method: :delete
+        - else
+          %li.nab-item= link_to 'ユーザー登録', new_user_registration_path
+          %li.nab-item= link_to 'ログイン', new_user_session_path
+
