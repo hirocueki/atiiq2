@@ -4,7 +4,6 @@ class Item < ApplicationRecord
 
   validates :title, :content, presence: true
 
-
   scope :recent, -> { order(updated_at: :desc) }
 
 end

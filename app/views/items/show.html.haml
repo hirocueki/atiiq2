@@ -7,18 +7,19 @@
 -##stock-buttons-form
 -#  = render "stocks/stock", item: @item
 
-%h1.item-title= @item.title
 
 .container
+  %h1.item-title= @item.title
+
   -#.item-tags= render 'items/tag_list', tag_list: @item.tag_list
   .item-content= @item.content
   #like-buttons-form
     = render 'items/likes/like', item: @item if @item.user != current_user
   %hr
-  -#= render "comments/comment_list", item: @item
+  = render "comments/comment_list", item: @item
 
   - if user_signed_in?
-    -#= render template: "comments/new"
+    = render template: "comments/new"
   - else
     あなたのもコメントしてみませんか
     %br
