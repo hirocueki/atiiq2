@@ -1,0 +1,12 @@
+= form_with(model: [user, item, comment], local: true) do |f|
+  - if comment.errors.any?
+    #error_explanation.alert.alert-danger
+      %ul
+        - comment.errors.full_messages.each do |message|
+          %li #{message}
+
+  .field
+    = f.text_area :content, id: :comment_content, placeholder: "コメント内容", class: 'form-control'
+
+  .actions.text-right
+    = f.submit (yield :submit_label), class: 'btn btn-primary mt-1'
