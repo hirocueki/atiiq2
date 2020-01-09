@@ -1,6 +1,6 @@
 
--##stock-buttons-form
--#  = render "stocks/stock", item: @item
+#stock-buttons-form
+  = render "stocks/stock", item: @item
 
 
 .container
@@ -15,7 +15,7 @@
   -#.item-tags= render 'items/tag_list', tag_list: @item.tag_list
   .item-content= @item.content
   #like-buttons-form
-    = render 'items/likes/like', item: @item if @item.user != current_user
+    -#= render 'items/likes/like', item: @item if @item.user != current_user
   %hr
   = render "comments/comment_list", item: @item
 

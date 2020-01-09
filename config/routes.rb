@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   resources :users, :expect => [:index] do
-    resources :items do
-      resources :comments
+    resources :items, expect: :index do
+      resources :comments, only: :create
+
+      resources :stocks, only: %i[create destroy]
     end
   end
 end

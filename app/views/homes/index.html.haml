@@ -1,3 +1,4 @@
 %h1 Homes#index
 
-= link_to 'Home', root_path, class: "btn btn-primary"
+
+= render partial: 'items/item_list', locals: {items: @items}

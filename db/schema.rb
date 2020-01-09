@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_033417) do
     t.string "title", default: "", null: false
     t.text "content", default: "", null: false
     t.bigint "user_id"
+    t.integer "stocks_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_items_on_user_id"
