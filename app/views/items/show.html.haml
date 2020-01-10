@@ -12,7 +12,7 @@
     = link_to '編集する', edit_user_item_path(@user, @item)
     = link_to '削除する', user_item_path(@user, @item), method: :delete, data: {confirm: 'よろしいですか？'}
 
-  -#.item-tags= render 'items/tag_list', tag_list: @item.tag_list
+  .item-tags= render 'items/tag_list', tag_list: @item.tag_list
   .item-content= @item.content
   #like-buttons-form
     -#= render 'items/likes/like', item: @item if @item.user != current_user

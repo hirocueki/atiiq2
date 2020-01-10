@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :tags, only: %i[show], param: :name do
+    resource :follow, only: %i[create destroy], module: :tags
+  end
+
   resource :tagfeed, only: :show
   resource :timeline, only: :show
   resources :relationships, only: %i[create destroy]
