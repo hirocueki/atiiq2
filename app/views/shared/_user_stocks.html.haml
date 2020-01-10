@@ -1,0 +1,5 @@
+- if items.any?
+  %h3 ストック一覧（#{items.count}）
+  = render 'items/item_list', items: items
+- else
+  %h3 ストックはありません
