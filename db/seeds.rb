@@ -8,6 +8,7 @@
 
 5.times do |n|
   User.create!(
+    name: Faker::Name.name,
     email: "user#{n}-test@sample.com",
     password: '111111',
     password_confirmation: '111111'
