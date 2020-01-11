@@ -1,0 +1,10 @@
+.row
+  %aside.col-md-4
+    %section.user_info
+      = render 'shared/user_info', user: @user
+    %section.stats
+      = render 'shared/stats', user: @user
+    %section.tags_feed
+      = render 'tags/feed', tag_list: @user.tag_list
+  .col-md-8
+    = render 'tagfeed', items: @items

@@ -1,0 +1,15 @@
+- if items.any?
+  %h4 TagFeed
+
+  .paginate = paginate @items
+
+  %ol.items.list-group
+    - items.each do |item|
+      %li.list-group-item
+        - matched_tag = (item.tag_list & @followed_tag_list).first
+        .tag
+          %code = matched_tag
+
+
+        = link_to item.title, user_item_path(item.user, item)
+        %span.pull

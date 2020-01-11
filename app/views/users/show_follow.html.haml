@@ -1,0 +1,16 @@
+.row
+  %aside.col-md-4
+    %section.user_info
+      %h1= @user.name
+      %span= link_to "プロフィール", user_path(@user)
+      %span
+        %strong Posts
+        = @user.items.count
+    %section.stats
+      = render 'shared/stats', user: @user
+  .col-md-8
+    %h3= @title
+    - if @users.any?
+      %ul.users.follow
+        = render @users
+      = paginate @users

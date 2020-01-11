@@ -1,0 +1,8 @@
+- if tag_list && tag_list.count > 0
+  %h4 フォロー中のタグ
+  %ol.tag_list.list-group
+    - tag_list.each do |tag|
+      %li.list-group-item
+        = link_to tag, tag_path(name: tag)
+- else
+  %h4 タグをフォローしていません

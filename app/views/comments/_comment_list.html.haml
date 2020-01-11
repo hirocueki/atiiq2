@@ -3,7 +3,7 @@
   - item.comments.older.includes(:user).each do |comment|
     %li.list-group-item
       - user = comment.user
-      = link_to user.email, user_path(user)
+      = link_to user.name, user_path(user)
       = l comment.created_at
       %br
       = comment.content

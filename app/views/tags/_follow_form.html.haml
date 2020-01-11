@@ -1,0 +1,5 @@
+#follow_form
+  - if current_user.tag_list.include?(tag_name)
+    = button_to "フォロー解除", tag_follow_path(tag_name), method: :delete, class: "btn btn-danger"
+  - else
+    = button_to "フォロー", tag_follow_path(tag_name: tag_name), class: "btn btn-light"

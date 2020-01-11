@@ -1,16 +1,18 @@
 .row
   %aside.col-md-4
     %section.user_info
-      = @user.email
-    -#%section.stats
-    -#  = render 'shared/stats', user: @user
-    -#- if current_user == @user
-    -#  %section.stocks
-    -#    = render 'shared/user_stocks', items: @stocked_items
-    -#  %section.tags_feed
-    -#    = link_to "タグフィード", tagfeed_path
-    -#  %section.timeline
-    -#    = link_to "タイムライン", timeline_path
+      = render 'shared/user_info', user: @user
+    %section.stats
+      = render 'shared/stats', user: @user
+    - if current_user == @user
+      %section.stocks
+        = render 'shared/user_stocks', items: @stocked_items
+      %section.tags_feed
+        = link_to "タグフィード", tagfeed_path
+      %section.timeline
+        = link_to "タイムライン", timeline_path
+      %section.users
+        = link_to "ユーザー一覧", users_path
 
   .col-md-8
     = render 'follow_form', user: @user if current_user && current_user != @user

@@ -6,13 +6,13 @@
 .container
   %h1.item-title= @item.title
 
-  = link_to @user.email, user_path(@user)
+  = link_to @user.name, user_path(@user)
   #{l @item.updated_at, format: :short} に更新
   - if user_signed_in? && @user == current_user
     = link_to '編集する', edit_user_item_path(@user, @item)
     = link_to '削除する', user_item_path(@user, @item), method: :delete, data: {confirm: 'よろしいですか？'}
 
-  -#.item-tags= render 'items/tag_list', tag_list: @item.tag_list
+  .item-tags= render 'items/tag_list', tag_list: @item.tag_list
   .item-content= @item.content
   #like-buttons-form
     -#= render 'items/likes/like', item: @item if @item.user != current_user
