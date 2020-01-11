@@ -17,7 +17,7 @@ end
       password:              '111111',
       password_confirmation: '111111'
   ) do |user|
-    build_items user
     user.save!
+    build_items user
   end
 end
