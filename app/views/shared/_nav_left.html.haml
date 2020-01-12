@@ -1,0 +1,9 @@
+- if current_user == @user
+  -#%section.stocks
+    = render 'shared/user_stocks', items: @stocked_items
+  %section.timeline
+    = link_to "タイムライン", timeline_path
+  %section.tags_feed
+    = link_to "タグフィード", tagfeed_path
+  %section.users
+    = link_to "ユーザー一覧", users_path

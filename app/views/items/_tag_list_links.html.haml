@@ -1,0 +1,4 @@
+- tag_list.each_with_index do |tag, i|
+  =link_to tag, tag_path(tag)
+  - if i < tag_list.size - 1
+    ,
