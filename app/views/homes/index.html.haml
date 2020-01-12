@@ -1,4 +1,7 @@
-%h1 Homes#index
-
-
-= render partial: 'items/item_list', locals: {items: @items}
+.row
+  %aside.col-md-4
+    = render 'shared/nav_left', items: @stocked_items
+  .col-md-5
+    = render 'items/item_list', items: @items
+  %aside.col-md-3
+    = render 'shared/user_info', user: @user

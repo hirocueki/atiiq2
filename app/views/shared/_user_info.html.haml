@@ -1,5 +1,6 @@
-%section.user_info
-  %h1
-    = user.name
-%section.stats
-  = render 'shared/stats', user: @user
+- if @user
+  %section.user_info
+    %h1
+      = user.name
+  %section.stats
+    = render 'shared/stats', user: @user
