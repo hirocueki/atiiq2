@@ -1,7 +1,6 @@
 .row
   %aside.col-md-4
-    %section.tags_feed
-      = render 'tags/feed', tag_list: @user.tag_list
+    = render 'shared/nav_left', items: @stocked_items
   .col-md-5
     = render 'tagfeed', items: @items
   %aside.col-md-3
