@@ -6,10 +6,18 @@
     #mainNavbarCollapse.collapse.navbar-collapse.ml-auto
       %ul.navbar-nav.ml-auto
         - if user_signed_in?
-          %li.nab-item= link_to '投稿する', new_user_item_path(current_user)
-          %li.nab-item= link_to '記事の一覧', user_path(current_user)
-          %li.nab-item= link_to 'ログアウト', destroy_user_session_path, method: :delete
+          %li.nav-item.dropdown
+            = link_to 'コミュニティ', '#', id: 'navbarDropdown', role: "button", data: {toggle: "dropdown"},  class: "nav-link dropdown-toggle"
+            .dropdown-menu{ aria: { labelledby: "navbarDropdown" } }
+              =link_to 'ユーザー一覧', users_path, class:"dropdown-item"
+          %li.nav-item
+            = link_to '投稿する', new_user_item_path(current_user) ,class:"nav-link"
+          %li.nav-item
+            = link_to '記事の一覧', user_path(current_user) ,class:"nav-link"
+          %li.nav-item
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete ,class:"nav-link"
         - else
-          %li.nab-item= link_to 'ユーザー登録', new_user_registration_path
-          %li.nab-item= link_to 'ログイン', new_user_session_path
-
+          %li.nav-item
+            = link_to 'ユーザー登録', new_user_registration_path ,class:"nav-link"
+          %li.nav-item
+            = link_to 'ログイン', new_user_session_path, class:"nav-link"
