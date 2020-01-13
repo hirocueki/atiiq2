@@ -1,0 +1,13 @@
+%ol.items.list-group
+  - items.each do |item|
+    %li.list-group-item
+      .row
+        =link_to item.user.name, user_path(item.user)
+        が
+        %span= l item.updated_at, format: :short_slash
+        に投稿
+
+      .row
+        = link_to item.title, user_item_path(item.user, item)
+      .row
+        =render "items/tag_list", tag_list: item.tag_list

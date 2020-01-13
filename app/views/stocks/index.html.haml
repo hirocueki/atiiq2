@@ -1,0 +1,13 @@
+.row
+  %aside.col-md-4
+    %h4 ストック一覧
+    あなたがストックした記事の一覧です。
+    %h5 ストック内検索
+    %h5 タグ
+
+  .col-md-8
+    - if @items.any?
+      %h3 ストック一覧（#{@items.count}）
+      = render 'stock_list', items: @items
+    - else
+      %h3 ストックはありません

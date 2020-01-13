@@ -1,19 +1,9 @@
 .row
-  %aside.col-md-4
-    %section.user_info
-      = render 'shared/user_info', user: @user
-    %section.stats
-      = render 'shared/stats', user: @user
-    - if current_user == @user
-      %section.stocks
-        = render 'shared/user_stocks', items: @stocked_items
-      %section.tags_feed
-        = link_to "タグフィード", tagfeed_path
-      %section.timeline
-        = link_to "タイムライン", timeline_path
-      %section.users
-        = link_to "ユーザー一覧", users_path
+  %aside.col-md-2
+    = render 'shared/nav_left', items: @stocked_items
 
-  .col-md-8
+  .col-md-7
     = render 'follow_form', user: @user if current_user && current_user != @user
     = render 'shared/feed', items: @items
+  %aside.col-md-3
+    = render 'shared/user_info', user: @user

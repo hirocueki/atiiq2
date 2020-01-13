@@ -1,0 +1,19 @@
+.row
+  %aside.col-md-2
+    = render 'shared/nav_left', items: @stocked_items
+
+  .col-md-7
+    %h3 タイムライン
+    %ol.items.list-group
+      - @items.each do |item|
+        %li.list-group-item
+          .row
+            #{item.user.name} が投稿しました
+            %span.pull-right= l item.updated_at, format: :short_slash
+          .row
+            = link_to item.title, user_item_path(item.user, item)
+          .row
+            =render "items/tag_list_links", tag_list: item.tag_list
+
+  %aside.col-md-3
+    = render 'shared/user_info', user: @user

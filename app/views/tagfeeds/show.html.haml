@@ -1,10 +1,7 @@
 .row
   %aside.col-md-4
-    %section.user_info
-      = render 'shared/user_info', user: @user
-    %section.stats
-      = render 'shared/stats', user: @user
-    %section.tags_feed
-      = render 'tags/feed', tag_list: @user.tag_list
-  .col-md-8
+    = render 'shared/nav_left', items: @stocked_items
+  .col-md-5
     = render 'tagfeed', items: @items
+  %aside.col-md-3
+    = render 'shared/user_info', user: @user
