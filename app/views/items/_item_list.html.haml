@@ -1,5 +1,5 @@
 %ol.items.list-group
   - items.each do |item|
     %li.list-group-item
-      = link_to item.title, user_item_path(item.user, item)
+      =link_to item.title, user_item_path(item.user, item)
       %span.pull-right= l item.updated_at, format: :short_slash

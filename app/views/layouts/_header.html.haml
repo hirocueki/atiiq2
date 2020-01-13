@@ -11,6 +11,9 @@
             .dropdown-menu{ aria: { labelledby: "navbarDropdown" } }
               =link_to 'ユーザー一覧', users_path, class:"dropdown-item"
           %li.nav-item
+            = link_to 'ストック一覧', stocks_path ,class:"nav-link"
+
+          %li.nav-item
             = link_to '投稿する', new_user_item_path(current_user) ,class:"nav-link"
           %li.nav-item
             = link_to '記事の一覧', user_path(current_user) ,class:"nav-link"
