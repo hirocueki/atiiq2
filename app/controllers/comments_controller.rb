@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to user_item_url(@user, @item), notice: 'Comment was successfully created.'
+      redirect_to user_item_url(@user, @item), notice: '作成しました'
     else
       render :new
     end
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to user_item_url(@user, @item), notice: 'Comment was successfully updated.'
+      redirect_to user_item_url(@user, @item), notice: '更新しました'
     else
       render :edit
     end
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy!
-      redirect_to user_item_url(@user, @item), notice: 'Comment was successfully destroyed.'
+    redirect_to user_item_url(@user, @item), alert: '削除しました'
   end
 
   private

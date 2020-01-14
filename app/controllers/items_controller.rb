@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to user_url(@user), notice: '削除しました'
+    redirect_to user_url(@user), alert: '削除しました'
   end
 
   private
