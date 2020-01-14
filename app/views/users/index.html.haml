@@ -1,6 +1,6 @@
 = paginate @users
-%ul.list-group
-  - @users.each do |user|
-    %li.list-group-item
-      = link_to "#{user.name}", user_path(user)
+
+%ul.list-group.mb-3
+    = render @users
+
 = paginate @users
